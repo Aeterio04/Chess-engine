@@ -8,7 +8,7 @@ from chesslogic import (
     pawn_white_3, pawn_white_4, pawn_white_5, pawn_white_6, pawn_white_7, pawn_white_8
 )
 
-# Initialize root window
+
 root = tk.Tk()
 root.title("Chess Board GUI")
 
@@ -23,7 +23,7 @@ player='w'
 
 
 turn_label = tk.Label(root, text="white's Turn", font=("Arial", 16))
-turn_label.grid(row=0, column=0, columnspan=9)  # Place it above the boar
+turn_label.grid(row=0, column=0, columnspan=9)  
 def switch_turn():
     global player
     if player=='w':
@@ -33,14 +33,11 @@ def switch_turn():
     turn_label.config(text=f"{player}'s Turn")
 
 def popup(title,string):
-    # Create the popup window
     popup = tk.Toplevel(root)
     popup.title(title)
     
-    # Set popup window size
     popup.geometry("300x200")
     
-    # Label in the popup window
     label = tk.Label(popup, text=string, font=("Arial", 12))
     label.pack(pady=20)
     
@@ -49,7 +46,6 @@ def popup(title,string):
     close_button.pack(pady=10)
 
 
-#defining invalidity and first play
 
     
 # Define board size, tile coordinates list, and piece symbols
@@ -75,14 +71,13 @@ def tile_click(row, col):
         print('_')
     
     if len(coordinates) == 2:
-        # Pass the coordinates to the backend's askmove functio
+        
         
         askmove(coordinates[0],coordinates[1])
         print(moves)
-        # Clear the coordinates for the next move
+        
         coordinates.clear()
 
-# Placeholder for askmove function (to be replaced with actual backend logic)
 def askmove(prev,post):
     global player
     global moves 
@@ -134,14 +129,12 @@ for col in range(board_size):
     label.grid(row=0, column=col + 1)
 
 
-# Add row labels and create tiles as buttons
 buttons = {}
-for row in range(board_size - 1, -1, -1):  # Start from 7 to 0 to get 7,0 at top
-    # Row label (1-8)
+for row in range(board_size - 1, -1, -1): 
+    
     label = tk.Label(frame, text=str(board_size - row))  # '8' at top, '1' at bottom
     label.grid(row=1+ row, column=0)
 
-    # Create each button for the board
     for col in range(board_size):
         # Set background color
         color = "white" if (row + col) % 2 == 0 else "gray"
