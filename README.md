@@ -1,5 +1,5 @@
 # Chess-engine
-First attempt at devloping a project. used basic OOP to create classes for each chess piece, which were then stored in a dictionary. The GUI for the same was made by using a tkintor grid of buttons, with the pieces being displayed as text.
+First attempt at devloping a project. used basic OOP to create classes for each chess piece, which were then stored in a dictionary. The GUI for the same was made by using a tkinter grid of buttons, with the pieces being displayed as text.
 
 File 1:
 
@@ -8,4 +8,4 @@ each piece has a class namely rook, knight, bishop, queen, king, pawn. Each clas
 
 Chess Gui:
 
-The Gui is created by using tkintor to create buttons and there are methods to update the board and ask for moves on the basis of what two squares were pressed in succession. Theres also a Switchmove() method to switch the player after recieveing a valid input
+The Gui is created by using tkinter to create buttons and there are methods to update the board and ask for moves on the basis of what two squares were pressed in succession. Theres also a Switchmove() method to switch the player after recieveing a valid input
